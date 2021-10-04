@@ -1,0 +1,69 @@
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: black">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+	  <div><a style = "color: orange; text-decoration: none; font-size: 2em;" href="/">Food Blog</a></div>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a style = "color: orange; text-decoration: none;" href="/">Home</a>
+          </li>
+		  <% if(loggedIn) { %>
+		  <li class="nav-item">
+            <a style = "color: orange; text-decoration: none;" href="/posts/new">New Post</a>
+          </li>
+		  <li class="nav-item">
+            <a style = "color: orange; text-decoration: none;" href="/auth/logout">Logout</a>
+          </li>
+		  <% } %>
+		  <% if(!loggedIn) { %>
+		  <li class="nav-item">
+            <a style = "color: orange; text-decoration: none;" href="/auth/login">Login</a>
+          </li>
+		  <li class="nav-item">
+            <a style = "color: orange; text-decoration: none;" href="/auth/register">New User</a>
+          </li>
+		  
+		  <% } %>
+		  
+		  
+		  <form action="/searchPost" method="POST"
+		enctype="multipart/form-data">
+		
+		  <li class="nav-item">
+			<input type = "text" class="form-control" placeholder="Search" id = "searchPost" name = "searchPost"/>
+          </li>
+		  </form>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

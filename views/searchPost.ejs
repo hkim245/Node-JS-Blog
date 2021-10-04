@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header'); -%>
+<body>
+
+<%- include('layouts/navbar'); -%>
+
+  <!-- Page Header -->
+
+
+  <!-- Main Content -->
+  <h2 style = "height: 2em; margin-top: 5em; text-align: center; color: orange;">Search results for "<%= searchString %>"</h2>
+  <% if (blogposts) { %>
+  <div class="container">
+    <div class="row">
+      <div>
+	  <ul style = "list-style-type: none; display: flex; flex-wrap: wrap; margin: 0em;">
+	    <% for (let i of blogposts) {%>
+        <li style = "margin: 1em; box-shadow: 0 0 0.2em #333;"><div>
+		<p>
+		  <a href="/post/<%= i._id %>" style = "color: black;">
+            <h2 class="post-title" >
+              <%= i.title %> 
+            </h2>
+            <h3 class="post-subtitle">
+              <%= i.body %>
+            </h3>
+          </a>
+          Posted by
+            <a href="#"><%= i.userid.username %></a>
+            on <%= i.datePosted.toDateString() %></p>
+			
+			<header class="masthead" style="background-image: url('<%= i.image %>')"><p class="post-meta" style = "white-space: pre">
+			
+			
+			
+			</p>
+        </div></li>
+        <% } %>
+        <!-- Pager <div class="clearfix"> <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a> </div>-->
+        </ul>
+          
+        
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <% if (blogposts.length == 0) { %><h3 style = "text-align: center;">No matches were found</h3><% } %>
+
+  <hr style = "height: 5em; ">
+
+<%- include('layouts/footer'); -%>
+<%- include('layouts/scripts'); -%>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
